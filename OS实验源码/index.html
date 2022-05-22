@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .ready_queue{
+      stroke: hsl(260, 50%, 90%);
+      fill: white;
+      stroke-width: 7;
+    }
+    .back_queue{
+      stroke: hsl(260, 50%, 90%);
+      fill: white;
+      stroke-width: 7;
+    }
+    .hangUp_queue{
+      stroke: hsl(260, 50%, 90%);
+      fill: white;
+      stroke-width: 7;
+    }
+    .cpu{
+      stroke: hsl(260, 50%, 90%);
+      fill: white;
+      stroke-width: 7;
+    }
+    .ready_g circle{
+      fill: pink;
+      cursor: pointer;
+    }
+    .hangUp_g circle{
+      cursor: pointer;
+      fill: pink;
+      stroke: aqua;
+      stroke-width: 3;
+    }
+    .back_g circle{
+      fill: pink;
+    }
+    #OS{
+      width: 1300px;
+      height: 700px;
+    }
+    /*样式框*/
+    #tooltip {
+      position: absolute;
+      width: 200px;
+      height: auto;
+      padding: 10px;
+      background-color: white;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      border-radius: 10px;
+      -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+      -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+      box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+      pointer-events: none;
+    }
+    #tooltip.hidden {
+      display: none;
+    }
+    #tooltip p {
+      margin: 0;
+      font-family: sans-serif;
+      font-size: 16px;
+      line-height: 20px;
+    }
+    #memory{
+      stroke: lightcyan;
+      stroke-width: 7;
+      fill: none;
+    }
+    .memory_g rect{
+      stroke-width: 7;
+      fill: none;
+      stroke: #ffc1eb;
+    }
+
+    .hidden{
+      display: none;
+    }
+
+  </style>
+</head>
+<body>
+
+<div id="tooltip" class="hidden">
+  <p>进程名: <span id="pid"></span></p>
+  <p>要求运行时间: <span id="need_time"></span></p>
+  <p>优先权: <span id="priority"></span></p>
+  <p>状态: <span id="state"></span></p>
+  <p>属性: <span id="property"></span></p>
+  <p class="f_b">前驱节点: <span id="fore"></span></p>
+  <p class="f_b">后继节点: <span id="back"></span></p>
+  <p id="start_text">现占内存起址: <span id="start"></span></p>
+  <p>所需内存大小: <span id="size"></span></p>
+</div>
+
+<button id="cBtn">next time</button>
+<button id="nData">new data</button>
+<svg id="OS"></svg>
+<script src="d3.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
