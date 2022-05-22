@@ -1,2 +1,9 @@
-# OS_Homework
-操作系统作业，模拟进程调度
+# OS-experiment
+for the OS course
+
+## how to run
+
+need run in server
+
+user IDE like webstorm phpstorm vscode or even python to build server
+
